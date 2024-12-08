@@ -1,0 +1,1 @@
+2024-12-07 08:50:07 - Moisture Level: 242.481 (Threshold: 50)
