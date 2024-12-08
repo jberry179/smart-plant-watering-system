@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Plant Watering System</title>
+</head>
+<body>
+    <h1>Welcome, {{ user }}</h1>
+    <h2>Soil Moisture: {{ moisture_level }}</h2>
+
+    <!-- Soil Status Message -->
+    <h3>
+        {% if moisture_level > 550 %}
+            Soil is dry. It needs to be watered!
+        {% elif moisture_level <= 450 %}
+            Soil is moist. No watering needed.
+        {% else %}
+            Soil is moderately moist. Monitor closely.
+        {% endif %}
+    </h3>
+
+    <!-- Pump Status -->
+    <h2>Pump Status: {{ "ON" if pump_status else "OFF" }}</h2>
+
+    <!-- Buttons -->
+    <form action="{{ url_for('toggle_pump') }}" method="POST">
+        <button type="submit">Manual Water</button>
+    </form>
+
+    <form action="{{ url_for('auto_water') }}" method="POST">
+        <button type="submit">Start Auto Watering</button>
+    </form>
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
+
