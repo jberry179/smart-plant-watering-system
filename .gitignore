@@ -1,5 +1,5 @@
 # Ignore the virtual environment
-venv/
+/venv/
 
 # Ignore Python cache files
 __pycache__/
@@ -13,4 +13,6 @@ sites-enabled/
 *.swp
 
 #Ignore app.py
+*.py
+*.txt
 app.py
