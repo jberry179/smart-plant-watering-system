@@ -5,12 +5,13 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form method="post">
-        {{ form.csrf_token }}
-        {{ form.username.label }} {{ form.username }}
-        {{ form.password.label }} {{ form.password }}
-        {{ form.submit }}
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        <p>{{ form.username.label }} {{ form.username }}</p>
+        <p>{{ form.password.label }} {{ form.password }}</p>
+        <p>{{ form.submit }}</p>
     </form>
+    <a href="{{ url_for('register') }}">Register</a>
 </body>
 </html>
 
