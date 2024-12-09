@@ -1,18 +1,24 @@
-# Ignore the virtual environment
-/venv/
+# SSL Certificates
+cert.pem
+key.pem
+*.pem
 
-# Ignore Python cache files
+# Python Cache Files
 __pycache__/
 *.pyc
+*.pyo
 
-# Ignore local configuration files
+# Virtual Environment
+venv/
+
+# Configuration Files
+.env
 sites-enabled/
 
-# Ignore other unnecessary files
-*.log
-*.swp
+# IDE Files
+.vscode/
+.idea/
 
-#Ignore app.py
-*.py
-*.txt
-app.py
+# Logs
+*.log
+
